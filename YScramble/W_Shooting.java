@@ -17,16 +17,18 @@ import java.io.FileReader;
 import java.util.Random;
 import java.util.Vector;
 
+// 파일 출처 : http://egloos.zum.com/icegeo/viewer/275023
 
-public class W_Shooting {
+public class W_Shooting { // W_Shooting 클래스 생성
 
-	public static void main(String[] args){
-		System.out.println("ストライクウィッチ-ズ Start!");
-		W_Shooting_frame wsf=new W_Shooting_frame();
+	public static void main(String[] args){ // main 메소드 생성
+		System.out.println("ストライクウィッチ-ズ Start!"); // Console창에 해당 문자열 출력
+		W_Shooting_frame wsf=new W_Shooting_frame(); // W_Shooting_frame 클래스 객체 생성 및 인스턴스화
 	}
 
 }
 
+// Frame 상속, Runnable : 멀티쓰레드용 인터페이스, KeyListener : 키보드 입력 처리 인터페이스
 class W_Shooting_frame extends Frame implements KeyListener, Runnable
 {
 
@@ -37,199 +39,103 @@ class W_Shooting_frame extends Frame implements KeyListener, Runnable
 	public final static int RIGHT_PRESSED	=0x008;
 	public final static int FIRE_PRESSED	=0x010;
 	
-	/**
-	 * @uml.property  name="gamescreen"
-	 * @uml.associationEnd  multiplicity="(1 1)" inverse="main:GameScreen"
-	 */
-	GameScreen gamescreen;
 
-	/**
-	 * @uml.property  name="mainwork"
-	 */
-	Thread mainwork;
-	/**
-	 * @uml.property  name="roof"
-	 */
-	boolean roof=true;
-	/**
-	 * @uml.property  name="rnd"
-	 */
-	Random rnd = new Random();	 
+	GameScreen gamescreen; // GameScreen 클래스 객체 생성
+	Thread mainwork; //	Thread 객체 생성
+	boolean roof=true; // roof 필드 생성 / 용도 : ???
+	Random rnd = new Random(); // Random 클래스 객체 생성 및 인스턴스화 / 변수명 : rnd
 
 
-	/**
-	 * @uml.property  name="status"
-	 */
-	int status;
-	/**
-	 * @uml.property  name="cnt"
-	 */
-	int cnt;
-	/**
-	 * @uml.property  name="delay"
-	 */
-	int delay;
-	/**
-	 * @uml.property  name="pretime"
-	 */
-	long pretime;
-	/**
-	 * @uml.property  name="keybuff"
-	 */
-	int keybuff;
 
+	int status;	// status 필드 생성 / 용도 : ???
+	int cnt; // cnt 필드 생성 / 용도 :  ???
+	int delay; // delay 필드 생성 / 용도 :  ???
+	long pretime; // pretime 필드 생성 / 용도 :  현재시간값 저장???
+	int keybuff; // keybuff 필드 생성 / 용도 :  ???
+	int score; // score 필드 생성 / 용도 : 플레이어 점수 저장용
+	int mylife; // mylife 필드 생성 / 용도 : 플레이어 생명값 저장
+	int gamecnt; // gamecnt 필드 생성 / 용도 : ???
+	int scrspeed=16; // scrspeed 필드 생성 / 용도 : ??? / 초기값 : 16
+	int level; // level 필드 생성 / 용도 : 스테이지 레벨값 저장
 
+	int myx; // myx 필드 생성 / 용도 : 플레이어 x좌표 위치값
+	int myy; // myy 필드 생성 / 용도 : 플레이어 y좌표 위치값
+	int myspeed;  // myspeed 필드 생성 / 용도 : 플레이어 이동 속도 값 저장
+	int mydegree; // mydegree 필드 생성 / 용도 : 플레이어 이동 방향
+	int mywidth; // mywidth 필드 생성 / 용도 : ???
+	int myheight; // myheight 필드 생성 / 용도 : ???
+	int mymode=1; // mymode 필드 생성 / 용도 : 플레이어의 상태값 저장 / 초기값 : 1 (0부터 순서대로 (0)무적,(1)등장시 무적,(2)온플레이,(3)데미지,(4)사망)
+	int myimg; // myimg 필드 생성 / 용도 : 플레이어 이미지 저장
+	int mycnt; // mycnt 필드 생성 / 용도 : ???
+	boolean myshoot=false; // myshoot 필드 생성 / 용도 : 플레이어 총알이 나가고 있는지 확인한다. / 초기값 : false (true : 쏜다, false : 안쏜다 )
+	int myshield; // myshield 필드 생성 / 용도 : 실드 남은 수비량
+	boolean my_inv=false; // my_inv 필드 생성 / 용도 : 키보드 반전 확인 / 초기값 : false (true : 키값과 반대로 움직인다 , false : 정상적으로 움직인다.)
+
+	int gScreenWidth=640; // gScreenWidth 필드 생성 / 용도 : 윈도우창 넓이?? / 초기값 : 640
+	int gScreenHeight=480; // gScreenHeight 필드 생성 / 용도 : 윈도우창 높이?? / 초기값 : 480
+
+	Vector bullets=new Vector(); // Vector 클래스 생성 및 인스턴스화 / 용도 : 총알??? / 변수명 : bullets
+	/*Vector : 객체에 대한 참조값을 저장하는 배열 */
 	
-	/**
-	 * @uml.property  name="score"
-	 */
-	int score;
-	/**
-	 * @uml.property  name="mylife"
-	 */
-	int mylife;
-	/**
-	 * @uml.property  name="gamecnt"
-	 */
-	int gamecnt;
-	/**
-	 * @uml.property  name="scrspeed"
-	 */
-	int scrspeed=16;
-	/**
-	 * @uml.property  name="level"
-	 */
-	int level;
-
-	/**
-	 * @uml.property  name="myx"
-	 */
-	int myx;
-	/**
-	 * @uml.property  name="myy"
-	 */
-	int myy;
-	/**
-	 * @uml.property  name="myspeed"
-	 */
-	int myspeed;
-	/**
-	 * @uml.property  name="mydegree"
-	 */
-	int mydegree;
-
-	/**
-	 * @uml.property  name="mywidth"
-	 */
-	int mywidth;
-	/**
-	 * @uml.property  name="myheight"
-	 */
-	int myheight;
-	/**
-	 * @uml.property  name="mymode"
-	 */
-	int mymode=1;
-	/**
-	 * @uml.property  name="myimg"
-	 */
-	int myimg;
-	/**
-	 * @uml.property  name="mycnt"
-	 */
-	int mycnt;
-	/**
-	 * @uml.property  name="myshoot"
-	 */
-	boolean myshoot=false;
-	/**
-	 * @uml.property  name="myshield"
-	 */
-	int myshield;
-	/**
-	 * @uml.property  name="my_inv"
-	 */
-	boolean my_inv=false;
-
-	/**
-	 * @uml.property  name="gScreenWidth"
-	 */
-	int gScreenWidth=640;
-	/**
-	 * @uml.property  name="gScreenHeight"
-	 */
-	int gScreenHeight=480;
-
-	/**
-	 * @uml.property  name="bullets"
-	 * @uml.associationEnd  multiplicity="(0 -1)" elementType="Bullet"
-	 */
-	Vector bullets=new Vector();
-	/**
-	 * @uml.property  name="enemies"
-	 * @uml.associationEnd  multiplicity="(0 -1)" inverse="main:Enemy"
-	 */
-	Vector enemies=new Vector();
-	/**
-	 * @uml.property  name="effects"
-	 * @uml.associationEnd  multiplicity="(0 -1)" elementType="Effect"
-	 */
-	Vector effects=new Vector();
-	/**
-	 * @uml.property  name="items"
-	 * @uml.associationEnd  multiplicity="(0 -1)" elementType="Item"
-	 */
-	Vector items=new Vector();
+	Vector enemies=new Vector(); // Vector 클래스 생성 및 인스턴스화 / 용도 : 적??? / 변수명 : enemies
+	Vector effects=new Vector(); // Vector 클래스 생성 및 인스턴스화 / 용도 : 효과??? / 변수명 : effects
+	Vector items=new Vector(); // Vector 클래스 생성 및 인스턴스화 / 용도 : 아이템??? / 변수명 : items
 	
 
-
-	
-	W_Shooting_frame(){
+	W_Shooting_frame(){ // W_Shooting_frame 메소드 생성
 		
-		setIconImage(makeImage("./rsc/icon.png"));
-		setBackground(new Color(0xffffff));
-		setTitle("ストライクウィッチ-ズ Fan Game");
-		setLayout(null);
-		setBounds(100,100,gScreenWidth,gScreenHeight);
-		setResizable(false);
-		setVisible(true);
-		
-		addKeyListener(this);
-		addWindowListener(new MyWindowAdapter());
+		setIconImage(makeImage("./rsc/icon.png")); // 윈도우창 좌측상단 이미지 변경
+		setBackground(new Color(0x000000)); // setBackground : 윈도우창 기본 배경색 지정 / 설정값 하얀색
+		/*setBackground...게임내부에 배경화면이 있기 때문에 굳이 필요없을듯...???*/
+		setTitle("ストライクウィッチ-ズ Fan Game"); // setTitle : 윈도우창 상단 타이틀명 설정
+		setLayout(null); // ??? 주석처리 후 실행해봤으나 정상작동 됨.
+		setBounds(100,100,gScreenWidth,gScreenHeight); // setBounds : 윈도우창 초기시작 위치값 설정 (x좌표,y좌표,창 가로길이,창 세로길이) 
+		setResizable(false); // setResizable : GUI 창크기 임의 설정 여부 설정(true면 마우스 클릭+드래그로 창 크기 설정 가능) / 초기값 : false
+		setVisible(true); // setVisible : GUI를 출력 여부 설정 (true : 윈도우 창 실행, false : 윈도우창 실행 종료)  / 초기값 : true
+		addKeyListener(this); // addKeyListener : 키보드 입력 받을 수 있도록 허용
+		/*addKeyListener... 없으면 키보드 입력 않됨.*/
+		addWindowListener(new MyWindowAdapter()); // addWindowListener : 윈도우 이벤트를 받기 위한 청취자 인터페이스???
+		/*MyWindowAdapter 메소드 를 인자로 불러들여서 게임 종료를 실행한다.
+		 * 간단하게 정리하면 우측 상단 x 아이콘을 클릭하거나 키보드 Alt+F4 키를 입력해서 게임 종료를 한다.
+		 * */
 
-		gamescreen=new GameScreen(this);
-		gamescreen.setBounds(0,0,gScreenWidth,gScreenHeight); 
-		add(gamescreen);
+		gamescreen=new GameScreen(this); // GameScreen 클래스 인스턴스 화 : 변수명 : gamescreen
+		gamescreen.setBounds(0,0,gScreenWidth,gScreenHeight); // setBounds : 윈도우창 내부에 게임화면 위치 및 크기 설정
+		/*(x좌표,y좌표,가로길이,세로길이)*/
+		add(gamescreen); // 윈도우창 내부에 게임 화면 출력
 
-		systeminit();
-		initialize(); 
+		systeminit(); // systeminit 메소드 호출 (프로그램 초기화)
+		initialize(); // initialize 메소드 호출 (게임 인트로 화면 출력)
 	}
 
-	public void systeminit(){
-
+	public void systeminit(){ // systeminit 메소드 생성
+		/*게임 실행 후 각 필드에 저장되어 있는 값을 초기화 하는 작업 담당*/
 		status=0;
 		cnt=0;
 		delay=17;
 		keybuff=0;
-
-		mainwork=new Thread(this); 
-		mainwork.start();	
+		// 이상 각 필드값 초기화
+		
+		mainwork=new Thread(this); // Thread 인스턴스화
+		mainwork.start(); // Thread 시작
 	}
-	public void initialize(){
+	public void initialize(){ // initialize 메소드 생성
 
-		Init_TITLE(); 
-		gamescreen.repaint(); 
+		Init_TITLE(); // Init_TITLE 메소드 호출;
+		//gamescreen.repaint(); //??? 그래픽 출력 관련
+		/*참조 : http://darkhorizon.tistory.com/37*/
 	}
 
 	
-	public void run(){
-		try 
+	public void run(){ // 멀티스레드 실행 메소드
+		try 	// 예외처리
 		{
-			while(roof){ 
-				pretime=System.currentTimeMillis(); 
+			while(roof){  //roof 필드값이 true일때 무한반복
+				pretime=System.currentTimeMillis();  // pretime 필드에 현재시간값 입력
+				/*System.currentTimeMillis() : 현재 시각과 1970년 1월 1일 오전 0시와의 차이를 long 값으로 전달*/
 
 				gamescreen.repaint();
-				process();
+				process(); // process 메소드 호출
 				keyprocess();
 
 				if(System.currentTimeMillis()-pretime<delay) Thread.sleep(delay-System.currentTimeMillis()+pretime);
@@ -309,11 +215,11 @@ class W_Shooting_frame extends Frame implements KeyListener, Runnable
 
 	
 	private void process(){
-		switch(status){
-		case 0:
+		switch(status){ //status 가 각 case값 이 되면 해당 case 실행
+		case 0: // 아무것도 실행 하지 않음
 			break;
 		case 1:
-			process_MY();
+			process_MY(); // process_MY 메소드 실행
 			if(mymode==2) status=2;
 			break;
 		case 2:
@@ -449,12 +355,12 @@ class W_Shooting_frame extends Frame implements KeyListener, Runnable
 
 
 	
-	public void Init_TITLE(){
-		
+	public void Init_TITLE(){ // Init_TITLE 메소드 생성
+		/*게임 인트로 화면 출력 을 담당하는 메소드*/
 
-
-		gamescreen.title=makeImage("./rsc/title.png");	
-		gamescreen.title_key=makeImage("./rsc/pushspace.png"); 
+		gamescreen.title=makeImage("./rsc/title.png");	// makeImage : 해당 경로 이미지 출력
+		gamescreen.title_key=makeImage("./rsc/pushspace.png");
+		/*각 이미지를 gamescreen 클래스의 title & title_key 변수에 각 대입한다.*/
 
 		
 		
@@ -497,43 +403,65 @@ class W_Shooting_frame extends Frame implements KeyListener, Runnable
 			else
 				gamescreen.chr[i]=makeImage("./rsc/player/my_"+i+".png");
 		}
-		Init_MYDATA();
+		Init_MYDATA(); // Init_MYDATA 메소드 호충
 	}
-	public void Init_MYDATA(){
-		score=0;
-		myx=0;
-		myy=23000;
-		myspeed=4;
-		mydegree=-1;
+	public void Init_MYDATA(){ // Init_MYDATA 메소드 생성
+		score=0; // 점수값 / 초기값 : 0 (0이상 값을 입력하면 게임 시작시 점수가 해당값으로 시작됨) 
+		myx=0; // 게임 시작할때 플레이어 위치값 x좌표 / 초기값 : 0 (초기값이 증가되면 게임시작시 플레이어 위치가 초기값만큼 오른쪽에서 시작한다.)
+		myy=23000; // 게임 시작할때 플레이어 위치값 y좌표 / 초기값 : 23000 (초기값이 작아지면 게임시작시 플레이어 위치가 위로 올라간다.)
+		myspeed=4; // 게임시작시 플레이어 스피드 설정값 / 초기값 : 4(초기값을 증가시키면 플레이어 이동속도가 증가한다.) 
+		mydegree=-1; // ??? / 초기값 : -1
 		
-		mymode=1;
-		myimg=2;
-		mycnt=0;
-		mylife=3;
-		keybuff=0;
+		mymode=1; // 플레이어의  / 초기값 : 1 (0부터 순서대로 (0)무적,(1)등장시 무적,(2)온플레이,(3)데미지,(4)사망)
+		myimg=2; // ??? / 초기값 : 2
+		mycnt=0; // ??? / 초기값 : 0
+		mylife=3; // 플레이어 생명값 / 초기값 : 3 (초기값을 증가시키면 게임 시작시 플레이어 생명이 초기값만큼 증가한다.)
+		keybuff=0; // ??? / 초기값 : 0
 	}
-	public void process_MY(){
+	public void process_MY(){ // process_MY 메소드 생성
 		Bullet shoot;
-		switch(mymode){
-		case 1:
-			myx+=200;
-			if(myx>20000) mymode=2;
+		switch(mymode){ // mymode 필드값이 각 case이면 해당 case 실행
+		case 1:	// mymode 필드값이 1이면 아래 명령 처리
+			myx+=100; // myx = myx + 200 (플레이어가 x좌표값을 200증가 시킨다.)
+			if(myx>20000) mymode=2; // myx 필드값이 20000 보다 크면 mymode필드에 2를 대입하고 빠져나간다.
+			/* mymode의 초기값은 1이며 게임 시작시 항상 case 1:이 시작된다.
+			 * myx+=100; : 게임 시작시 플레이어가 100만큼 앞으로 나오며, 값을 증가시키면 이동속도가 빨라진다.
+			 * if(myx>20000) mymode=2; : 플레이어의 x좌표값이 20000이 되면 플레이어는 이동을 멈추고 mymode 필드값을 2로 변경한다. 즉 case 2:로 넘어간다.
+			 * if의 20000값을 증가 시키면 플레이어가 멈추는 위치가 증가시킨 값 만큼 오른쪽으로 이동 된다.
+			 *
+			 * */
 			break;
-		case 0:
-			if(mycnt--==0) {
-				mymode=2;
-				myimg=0;
+		case 0:	// mymode 필드값이 0이면 아래 명령 처리
+			if(mycnt--==0) { // mycnt 필드값이 0과 같으면 아래 명령 처리하고 mycnt 필드값에서 1을 뺀다.
+				mymode=2; // mymode 필드값에 2를 대입한다. (case 2:로 넘어간다)
+				myimg=0; // mying 필드값에 0을 대입한다.
 			}
-		case 2:
+		case 2:	// mymode 필드값이 2이면 아래 명령 처리
+			//↓ mydegree 필드값이 -1과 같지 않고, my_inv 필드값이 true이면 mydegree 필드에 180을 더하고 360을 나눈 나머지 값을 대입한다.
 			if(mydegree!=-1&&my_inv) mydegree=(mydegree+180)%360;
+			//↓ mydegree 필드값이 -1보다 크면...
 			if(mydegree>-1) {
+				
+				/*myx-=(myspeed*Math.sin(Math.toRadians(mydegree))*100);
+				 * 정확히는 모르겠고...
+				 * myspeed 를 삭제하면 플레이어의 좌우 이동속도가 줄어든다.
+				 * Math.sin(Math.toRadians(mydegree)) 삭제하면 → 키를 눌러도 캐릭터가 왼쪽으로만 움직인다.
+				 * 100 값을 증가시키면 플레이어의 좌,우 이동속도가 증가한다.
+				*/
 				myx-=(myspeed*Math.sin(Math.toRadians(mydegree))*100);
+				
+				/*myx-=(myspeed*Math.sin(Math.toRadians(mydegree))*100);
+				 * 정확히는 모르겠고...
+				 * myspeed 를 삭제하면 플레이어의 상,하 이동속도가 줄어든다.
+				 * Math.sin(Math.toRadians(mydegree)) 삭제하면 ↓ 키를 눌러도 캐릭터가 윗쪽으로만 움직인다..
+				 * 100 값을 증가시키면 플레이어의 상,하 이동속도가 증가한다.
+				*/
 				myy-=(myspeed*Math.cos(Math.toRadians(mydegree))*100);
 			}
-			if(myimg==6) {
-				myx-=20;
-				if(cnt%4==0||myshoot){
-					myshoot=false;
+			if(myimg==6) { //myimg 필드값이 6과 같으면...
+				myx-=20; // myx 필드값에서 20을 뺀값을 myx 필드에 대입한다. (플레이어가 20만큼 뒤로 간다.)
+				if(cnt%4==0||myshoot){ // cnt필드값을 4로 나눈 나머지 값이 0 이거나 myshoot 필드값이 true이면...
+					myshoot=false; // myshoot 필드에 false를 대입한다.
 					shoot=new Bullet(myx+2500, myy+1500, 0, 0, RAND(245,265), 8);
 					bullets.add(shoot);
 					shoot=new Bullet(myx+2500, myy+1500, 0, 0, RAND(268,272), 9);
@@ -544,7 +472,7 @@ class W_Shooting_frame extends Frame implements KeyListener, Runnable
 				
 			}
 			break;
-		case 3:
+		case 3:	// mymode 필드값이 3이면 아래 명령 처리
 			
 			myimg=8;
 			if(mycnt--==0) {
@@ -844,133 +772,48 @@ class GameScreen extends Canvas
 {
 	
 	
-	/**
-	 * @uml.property  name="main"
-	 * @uml.associationEnd  multiplicity="(1 1)" inverse="gamescreen:W_Shooting_frame"
-	 */
 	W_Shooting_frame main;
-	/**
-	 * @uml.property  name="cnt"
-	 */
 	int cnt;
-	/**
-	 * @uml.property  name="gamecnt"
-	 */
 	int gamecnt;
 
 	
-	/**
-	 * @uml.property  name="x"
-	 */
 	int x;
-	/**
-	 * @uml.property  name="y"
-	 */
 	int y;
 
-	/**
-	 * @uml.property  name="dblbuff"
-	 */
 	Image dblbuff;
-	/**
-	 * @uml.property  name="gc"
-	 */
 	Graphics gc;
 
-	/**
-	 * @uml.property  name="bg"
-	 */
 	Image bg;
-	/**
-	 * @uml.property  name="bg_f"
-	 */
 	Image bg_f;
-	/**
-	 * @uml.property  name="bgFlip"
-	 */
 	Image bgFlip;
-	/**
-	 * @uml.property  name="cloud" multiplicity="(0 -1)" dimension="1"
-	 */
 	Image cloud[]=new Image[5];
-	/**
-	 * @uml.property  name="title"
-	 */
 	Image title;
-	/**
-	 * @uml.property  name="title_key"
-	 */
 	Image title_key;
 
-	/**
-	 * @uml.property  name="chr" multiplicity="(0 -1)" dimension="1"
-	 */
 	Image chr[]=new Image[9];
-	/**
-	 * @uml.property  name="enemy" multiplicity="(0 -1)" dimension="1"
-	 */
 	Image enemy[]=new Image[5];
-	/**
-	 * @uml.property  name="bullet" multiplicity="(0 -1)" dimension="1"
-	 */
 	Image bullet[]=new Image[5];
-	/**
-	 * @uml.property  name="explo"
-	 */
 	Image explo;
-	/**
-	 * @uml.property  name="item" multiplicity="(0 -1)" dimension="1"
-	 */
 	Image item[]=new Image[3];
 	
-	/**
-	 * @uml.property  name="num"
-	 */
 	Image num;
-	/**
-	 * @uml.property  name="uiUp"
-	 */
 	Image uiUp;
 
-	/**
-	 * @uml.property  name="_start"
-	 */
 	Image _start;
-	/**
-	 * @uml.property  name="_over"
-	 */
 	Image _over;
-	/**
-	 * @uml.property  name="shield"
-	 */
 	Image shield;
 
-	/**
-	 * @uml.property  name="font"
-	 */
 	Font font;
 
-	/**
-	 * @uml.property  name="v" multiplicity="(0 -1)" dimension="1"
-	 */
 	int v[]={-2,-1,0,1,2,1,0,-1};
-	/**
-	 * @uml.property  name="v2" multiplicity="(0 -1)" dimension="1"
-	 */
 	int v2[]={-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,7,6,5,4,3,2,1,0,-1,-2,-3,-4,-5,-6,-7};
-	/**
-	 * @uml.property  name="step"
-	 */
 	int step=0;
 
-	/**
-	 * @uml.property  name="boss"
-	 */
-	boolean boss=false;
+	boolean boss=false; // ??? / 초기값 : false
 
-	GameScreen(W_Shooting_frame main){
-		this.main=main;
-		font=new Font("Default",Font.PLAIN,9);
+	GameScreen(W_Shooting_frame main){ // GameScreen 메소드 생성
+		this.main=main; // ??? 주석처리시 화면 검정색 출력되고, 콘솔창에 에러메세지 계속 나옴
+		font=new Font("Default",Font.PLAIN,9); // ??? 주석처리해도 게임실행에 문제 없음???
 	}
 
 	public void paint(Graphics g){
@@ -1212,36 +1055,15 @@ class Bullet
 {
 	
 	
-	/**
-	 * @uml.property  name="dis"
-	 */
 	Point dis;
-	/**
-	 * @uml.property  name="pos"
-	 */
 	Point pos;
-	/**
-	 * @uml.property  name="_pos"
-	 */
 	Point _pos;
-	/**
-	 * @uml.property  name="degree"
-	 */
 	int degree;
 		
-	/**
-	 * @uml.property  name="speed"
-	 */
 	int speed;
-	/**
-	 * @uml.property  name="img_num"
-	 */
 	int img_num;
-	/**
-	 * @uml.property  name="from"
-	 */
 	int from;
-	Bullet(int x, int y, int img_num, int from, int degree, int speed){
+	Bullet(int x, int y, int img_num, int from, int degree, int speed){ // Bullet 메소드 생성
 		pos=new Point(x,y);
 		dis=new Point(x/100,y/100);
 		_pos=new Point(x,y);
@@ -1252,8 +1074,8 @@ class Bullet
 	}
 	public void move(){
 		_pos=pos;
-		pos.x-=(speed*Math.sin(Math.toRadians(degree))*100);
-		pos.y-=(speed*Math.cos(Math.toRadians(degree))*100);
+		pos.x-=(speed*Math.sin(Math.toRadians(degree))*100); // 플레이어와 적의 총알 속도 제어 100의 값이 커지면 총알이나가는 범위가 좁아진다.
+		pos.y-=(speed*Math.cos(Math.toRadians(degree))*100); // 플레이어와 적의 총알 속도 제어 100의 값이 커지면 총알이나가는 범위가 커진다.
 		dis.x=pos.x/100;
 		dis.y=pos.y/100;
 		
@@ -1262,55 +1084,17 @@ class Bullet
 class Enemy
 {
 	
-	/**
-	 * @uml.property  name="main"
-	 * @uml.associationEnd  multiplicity="(1 1)" inverse="enemies:W_Shooting_frame"
-	 */
 	W_Shooting_frame main;
-	/**
-	 * @uml.property  name="pos"
-	 */
 	Point pos;
-	/**
-	 * @uml.property  name="_pos"
-	 */
 	Point _pos;
-	/**
-	 * @uml.property  name="dis"
-	 */
 	Point dis;
-	/**
-	 * @uml.property  name="img"
-	 */
 	int img;
-	/**
-	 * @uml.property  name="kind"
-	 */
 	int kind;
-	/**
-	 * @uml.property  name="life"
-	 */
 	int life;
-	/**
-	 * @uml.property  name="mode"
-	 */
 	int mode;
-	/**
-	 * @uml.property  name="cnt"
-	 */
 	int cnt;
-	/**
-	 * @uml.property  name="shoottype"
-	 */
 	int shoottype;
-	/**
-	 * @uml.property  name="hitrange"
-	 */
 	int hitrange;
-	/**
-	 * @uml.property  name="bul"
-	 * @uml.associationEnd  
-	 */
 	Bullet bul;
 	Enemy(W_Shooting_frame main, int img, int x, int y, int kind, int mode){
 		this.main=main;
@@ -1585,29 +1369,11 @@ class Enemy
 class Effect
 {
 	
-	/**
-	 * @uml.property  name="pos"
-	 */
 	Point pos;
-	/**
-	 * @uml.property  name="_pos"
-	 */
 	Point _pos;
-	/**
-	 * @uml.property  name="dis"
-	 */
 	Point dis;
-	/**
-	 * @uml.property  name="img"
-	 */
 	int img;
-	/**
-	 * @uml.property  name="kind"
-	 */
 	int kind;
-	/**
-	 * @uml.property  name="cnt"
-	 */
 	int cnt;
 	Effect(int img, int x, int y, int kind){
 		pos=new Point(x,y);
@@ -1621,25 +1387,10 @@ class Effect
 class Item
 {
 	
-	/**
-	 * @uml.property  name="pos"
-	 */
 	Point pos;
-	/**
-	 * @uml.property  name="dis"
-	 */
 	Point dis;
-	/**
-	 * @uml.property  name="speed"
-	 */
 	int speed;
-	/**
-	 * @uml.property  name="cnt"
-	 */
 	int cnt;
-	/**
-	 * @uml.property  name="kind"
-	 */
 	int kind;
 	Item(int x, int y, int kind){
 		this.kind=kind;
@@ -1661,20 +1412,13 @@ class Item
 	}
 }
 
-class MyWindowAdapter extends WindowAdapter
-{
-	
-	
-	
-	
-	
-	//
-	MyWindowAdapter(){
+class MyWindowAdapter extends WindowAdapter{ // MyWindowAdapter 클래스를 생성하고, WindowAdapter 클래스를 상속한다.
+	MyWindowAdapter(){ // MyWindowAdapter : 생성자 호출기능만 있는 빈 메소드
 	}
-	public void windowClosing(WindowEvent e) {
-		Window wnd = e.getWindow();
-		wnd.setVisible(false);
-		wnd.dispose();
-		System.exit(0);
+	public void windowClosing(WindowEvent e) { // 게임 종료 메소드
+		Window wnd = e.getWindow(); // Window 클래스 객체 생성 및 인스턴스화 / 변수명 : wnd
+		wnd.setVisible(false); // setVisible : GUI를 출력 여부 설정 (true : 윈도우 창 실행, false : 윈도우창 실행 종료)  / 초기값 : false
+		wnd.dispose(); // dispose : 프레임과 그 위에 포함된 모든 컴포넌트를 OS에게 반납하고 처분한다.
+		System.exit(0); // 어플리케이션을 종료
 	}
 }
