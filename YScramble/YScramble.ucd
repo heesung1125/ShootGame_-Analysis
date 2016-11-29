@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="YScramble" size="1123,1674" id="" metadata="uml2-1.0" initialized="true" scrolledY="109" tag="10" key="32303037303533312D31302059536372616D626C65">
+  <children xsi:type="editmodel:ClassEditModel" name="MyWindowAdapter" location="50,1569" size="162,85" id="/MyWindowAdapter">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="123,36">
+      <children xsi:type="editmodel:MethodEditModel" name="MyWindowAdapter" id="/MyWindowAdapter#MyWindowAdapter()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="windowClosing" id="/MyWindowAdapter#windowClosing(Ljava.awt.event.WindowEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="W_Shooting" location="262,1569" size="119,67" id="/W_Shooting">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="52,18">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="/W_Shooting#main([Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.1" name="GameScreen" location="299,50" size="139,823" id="/GameScreen">
+    <children xsi:type="editmodel:CompartmentEditModel" size="116,486">
+      <children xsi:type="editmodel:AttributeEditModel" name="_over" id="/GameScreen#_over"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="_start" id="/GameScreen#_start"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="bg" id="/GameScreen#bg"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="bgFlip" id="/GameScreen#bgFlip"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="bg_f" id="/GameScreen#bg_f"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="boss" id="/GameScreen#boss"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="bullet" id="/GameScreen#bullet"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="chr" id="/GameScreen#chr"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cloud" id="/GameScreen#cloud"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cnt" id="/GameScreen#cnt"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dblbuff" id="/GameScreen#dblbuff"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="enemy" id="/GameScreen#enemy"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="explo" id="/GameScreen#explo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="font" id="/GameScreen#font"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="gamecnt" id="/GameScreen#gamecnt"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="gc" id="/GameScreen#gc"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="item" id="/GameScreen#item"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="num" id="/GameScreen#num"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="shield" id="/GameScreen#shield"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="step" id="/GameScreen#step"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="title" id="/GameScreen#title"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="title_key" id="/GameScreen#title_key"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="uiUp" id="/GameScreen#uiUp"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="v" id="/GameScreen#v"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="v2" id="/GameScreen#v2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="x" id="/GameScreen#x"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="y" id="/GameScreen#y"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,288">
+      <children xsi:type="editmodel:MethodEditModel" name="Draw_BG" id="/GameScreen#Draw_BG()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Draw_BG2" id="/GameScreen#Draw_BG2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Draw_BULLET" id="/GameScreen#Draw_BULLET()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Draw_EFFECT" id="/GameScreen#Draw_EFFECT()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Draw_ENEMY" id="/GameScreen#Draw_ENEMY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Draw_ITEM" id="/GameScreen#Draw_ITEM()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Draw_MY" id="/GameScreen#Draw_MY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Draw_TITLE" id="/GameScreen#Draw_TITLE()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Draw_UI" id="/GameScreen#Draw_UI()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="GameScreen" id="/GameScreen#GameScreen(LW_Shooting_frame;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dblpaint" id="/GameScreen#dblpaint()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="drawImageAnc" id="/GameScreen#drawImageAnc(Ljava.awt.Image;IIIIIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="drawImageAnc" id="/GameScreen#drawImageAnc(Ljava.awt.Image;III)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="drawImageNum" id="/GameScreen#drawImageNum(Ljava.awt.Image;IIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="paint" id="/GameScreen#paint(Ljava.awt.Graphics;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="update" id="/GameScreen#update(Ljava.awt.Graphics;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0" name="Effect" location="905,799" size="95,175" id="/Effect">
+    <children xsi:type="editmodel:CompartmentEditModel" size="72,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="_pos" id="/Effect#_pos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cnt" id="/Effect#cnt"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dis" id="/Effect#dis"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="img" id="/Effect#img"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kind" id="/Effect#kind"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pos" id="/Effect#pos"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="59,18">
+      <children xsi:type="editmodel:MethodEditModel" name="Effect" id="/Effect#Effect(IIII)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.1 //@children.7/@sourceConnections.0" name="W_Shooting_frame" location="511,498" size="163,1021" id="/W_Shooting_frame">
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,576">
+      <children xsi:type="editmodel:AttributeEditModel" name="cnt" id="/W_Shooting_frame#cnt"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dOWN_PRESSED" id="/W_Shooting_frame#dOWN_PRESSED"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="delay" id="/W_Shooting_frame#delay"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fIRE_PRESSED" id="/W_Shooting_frame#fIRE_PRESSED"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="gScreenHeight" id="/W_Shooting_frame#gScreenHeight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="gScreenWidth" id="/W_Shooting_frame#gScreenWidth"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="gamecnt" id="/W_Shooting_frame#gamecnt"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="keybuff" id="/W_Shooting_frame#keybuff"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lEFT_PRESSED" id="/W_Shooting_frame#lEFT_PRESSED"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="level" id="/W_Shooting_frame#level"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mainwork" id="/W_Shooting_frame#mainwork"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="my_inv" id="/W_Shooting_frame#my_inv"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mycnt" id="/W_Shooting_frame#mycnt"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mydegree" id="/W_Shooting_frame#mydegree"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="myheight" id="/W_Shooting_frame#myheight"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="myimg" id="/W_Shooting_frame#myimg"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mylife" id="/W_Shooting_frame#mylife"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mymode" id="/W_Shooting_frame#mymode"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="myshield" id="/W_Shooting_frame#myshield"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="myshoot" id="/W_Shooting_frame#myshoot"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="myspeed" id="/W_Shooting_frame#myspeed"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mywidth" id="/W_Shooting_frame#mywidth"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="myx" id="/W_Shooting_frame#myx"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="myy" id="/W_Shooting_frame#myy"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pretime" id="/W_Shooting_frame#pretime"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rIGHT_PRESSED" id="/W_Shooting_frame#rIGHT_PRESSED"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rnd" id="/W_Shooting_frame#rnd"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="roof" id="/W_Shooting_frame#roof"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="score" id="/W_Shooting_frame#score"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="scrspeed" id="/W_Shooting_frame#scrspeed"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="status" id="/W_Shooting_frame#status"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="uP_PRESSED" id="/W_Shooting_frame#uP_PRESSED"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="136,396">
+      <children xsi:type="editmodel:MethodEditModel" name="GetDistance" id="/W_Shooting_frame#GetDistance(IIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Init_GAME" id="/W_Shooting_frame#Init_GAME()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Init_MY" id="/W_Shooting_frame#Init_MY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Init_MYDATA" id="/W_Shooting_frame#Init_MYDATA()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Init_TITLE" id="/W_Shooting_frame#Init_TITLE()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="RAND" id="/W_Shooting_frame#RAND(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="W_Shooting_frame" id="/W_Shooting_frame#W_Shooting_frame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAngle" id="/W_Shooting_frame#getAngle(IIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="initialize" id="/W_Shooting_frame#initialize()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyPressed" id="/W_Shooting_frame#keyPressed(Ljava.awt.event.KeyEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyReleased" id="/W_Shooting_frame#keyReleased(Ljava.awt.event.KeyEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyTyped" id="/W_Shooting_frame#keyTyped(Ljava.awt.event.KeyEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="makeImage" id="/W_Shooting_frame#makeImage(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="process_BULLET" id="/W_Shooting_frame#process_BULLET()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="process_EFFECT" id="/W_Shooting_frame#process_EFFECT()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="process_ENEMY" id="/W_Shooting_frame#process_ENEMY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="process_GAMEFLOW" id="/W_Shooting_frame#process_GAMEFLOW()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="process_ITEM" id="/W_Shooting_frame#process_ITEM()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="process_MY" id="/W_Shooting_frame#process_MY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="readGameFlow" id="/W_Shooting_frame#readGameFlow(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="run" id="/W_Shooting_frame#run()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="systeminit" id="/W_Shooting_frame#systeminit()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/Effect@effects+/W_Shooting_frame@" source="//@children.4" target="//@children.3" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="163,388" id="/Effect@effects+/W_Shooting_frame@|/W_Shooting_frame#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="effects" location="0,87" id="/Effect@effects+/W_Shooting_frame@|/Effect#effects" multiplicityLabel="//@children.4/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.4/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ effects" location="851,865" size="47,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="894,893" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/W_Shooting_frame@main+/GameScreen@gamescreen" source="//@children.4" target="//@children.2" targetEnd="//@children.4/@sourceConnections.1/@children.2" label="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="main" location="0,187" id="/W_Shooting_frame@main+/GameScreen@gamescreen|/W_Shooting_frame#main" attachSource="true" multiplicityLabel="//@children.4/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.4/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ main" location="470,664" size="34,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="498,692" size="6,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="gamescreen" location="139,635" id="/W_Shooting_frame@main+/GameScreen@gamescreen|/GameScreen#gamescreen" multiplicityLabel="//@children.4/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.4/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + gamescreen" location="445,664" size="72,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="445,692" size="6,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/Item@items+/W_Shooting_frame@" source="//@children.4" target="//@children.5" targetEnd="//@children.4/@sourceConnections.2/@children.2" label="//@children.4/@sourceConnections.2/@children.0" sourceEnd="//@children.4/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="163,10" id="/Item@items+/W_Shooting_frame@|/W_Shooting_frame#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="items" location="10,175" id="/Item@items+/W_Shooting_frame@|/Item#items" multiplicityLabel="//@children.4/@sourceConnections.2/@children.2/@children.1" roleLabel="//@children.4/@sourceConnections.2/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ items" location="903,377" size="37,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="885,377" size="4,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.2" name="Item" location="886,195" size="89,175" id="/Item">
+    <children xsi:type="editmodel:CompartmentEditModel" size="66,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="cnt" id="/Item#cnt"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dis" id="/Item#dis"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kind" id="/Item#kind"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pos" id="/Item#pos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="speed" id="/Item#speed"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="56,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Item" id="/Item#Item(III)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="move" id="/Item#move()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Bullet" location="50,622" size="101,211" id="/Bullet">
+    <children xsi:type="editmodel:CompartmentEditModel" size="78,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="_pos" id="/Bullet#_pos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="degree" id="/Bullet#degree"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dis" id="/Bullet#dis"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="from" id="/Bullet#from"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="img_num" id="/Bullet#img_num"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pos" id="/Bullet#pos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="speed" id="/Bullet#speed"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="56,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Bullet" id="/Bullet#Bullet(IIIIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="move" id="/Bullet#move()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/Bullet@bul+/Enemy@" source="//@children.6" target="//@children.7" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="bul" location="91,211" id="/Bullet@bul+/Enemy@|/Bullet#bul" attachSource="true" multiplicityLabel="//@children.6/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.6/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ bul" location="108,840" size="26,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="148,840" size="18,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" id="/Bullet@bul+/Enemy@|/Enemy#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/Bullet@bullets+/W_Shooting_frame@" source="//@children.6" target="//@children.4" targetEnd="//@children.6/@sourceConnections.1/@children.2" label="//@children.6/@sourceConnections.1/@children.0" sourceEnd="//@children.6/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="bullets" location="101,105" id="/Bullet@bullets+/W_Shooting_frame@|/Bullet#bullets" attachSource="true" multiplicityLabel="//@children.6/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.6/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ bullets" location="158,706" size="43,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="158,734" size="4,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,229" id="/Bullet@bullets+/W_Shooting_frame@|/W_Shooting_frame#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0" name="Enemy" location="293,923" size="107,265" id="/Enemy">
+    <children xsi:type="editmodel:CompartmentEditModel" size="84,180">
+      <children xsi:type="editmodel:AttributeEditModel" name="_pos" id="/Enemy#_pos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cnt" id="/Enemy#cnt"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dis" id="/Enemy#dis"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hitrange" id="/Enemy#hitrange"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="img" id="/Enemy#img"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kind" id="/Enemy#kind"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="life" id="/Enemy#life"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mode" id="/Enemy#mode"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pos" id="/Enemy#pos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="shoottype" id="/Enemy#shoottype"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="62,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Enemy" id="/Enemy#Enemy(LW_Shooting_frame;IIIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="move" id="/Enemy#move()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="/Enemy@enemies+/W_Shooting_frame@main" source="//@children.7" target="//@children.4" targetEnd="//@children.7/@sourceConnections.0/@children.2" label="//@children.7/@sourceConnections.0/@children.0" sourceEnd="//@children.7/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="enemies" location="107,132" id="/Enemy@enemies+/W_Shooting_frame@main|/Enemy#enemies" attachSource="true" multiplicityLabel="//@children.7/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.7/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" ~ enemies" location="407,1034" size="52,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="407,1062" size="4,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="main" location="0,557" id="/Enemy@enemies+/W_Shooting_frame@main|/W_Shooting_frame#main" multiplicityLabel="//@children.7/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.7/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + main" location="470,1034" size="34,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="498,1062" size="6,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=3;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
